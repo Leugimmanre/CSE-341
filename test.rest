@@ -1,16 +1,20 @@
 
-// Testing request all contacts
-GET http://localhost:4000/contacts
+// Testing request home
+GET http://localhost:4000/api
 ###
 
-// Testing request single contact
-
-GET http://localhost:4000/contact/644d63117361f3bbfcdb9cbd
+// Testing request all students
+GET http://localhost:4000/api/students
 ###
 
-// Testing request create new contact
+// Testing request single student
 
-POST http://localhost:4000/new-contact
+GET http://localhost:4000/api/student/644d63117361f3bbfcdb9cbd
+###
+
+// Testing request create new student
+
+POST http://localhost:4000/api/new-student
 content-type: application/json
 
 {
@@ -25,9 +29,9 @@ content-type: application/json
 }
 ###
 
-// Testing request update contact
+// Testing request update student
 
-PUT http://localhost:4000/update-contact/644d822d3897d90c7afc47f0
+PUT http://localhost:4000/api/update-student/644d822d3897d90c7afc47f0
 content-type: application/json
 
 {
@@ -42,9 +46,9 @@ content-type: application/json
 }
 ###
 
-// Testing request update contact
+// Testing request update student
 
-DELETE http://localhost:4000/delete-contact/644d81e33897d90c7afc47ee
+DELETE http://localhost:4000/api/delete-student/644d81e33897d90c7afc47ee
 
 
 
