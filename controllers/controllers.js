@@ -44,11 +44,11 @@ const updateStudent = async (request, response) => {
     university,
   } = request.body;
   const id = request.params["id"];
+  const data = await StudentProfile.findOne({_id:id});
 
   if (data) {
     try {
-      await StudentProfile.replaceOne(
-        { _id: data.id },
+      await StudentProfile.replaceOne({ _id: data.id },
         {
           firstName,
           lastName,
@@ -60,7 +60,9 @@ const updateStudent = async (request, response) => {
           university,
         }
       );
-      return response.status(204).send(data).json({
+      return response
+        .status(204)
+        .json({
         message: "Profile updated successfully",
       });
     } catch (error) {
@@ -72,7 +74,7 @@ const updateStudent = async (request, response) => {
 // DELETE profile
 const deleteStudent = async (request, response) => {
   const id = request.params["id"];
-  await Profile.findOneAndDelete({ _id: id })
+  await StudentProfile.findOneAndDelete({ _id: id })
     .then((deletedprofile) => {
       if (!deletedprofile) {
         return response.status(404).json({ error: "profile not found" });

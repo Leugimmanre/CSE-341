@@ -14,7 +14,7 @@ const app = express();
 app
   .use(express.json())
   .use(cors())
-  .use("/api", routes)
+  .use("/api", studentsRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);

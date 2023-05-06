@@ -3,17 +3,16 @@
 GET http://localhost:4000/api
 ###
 
-// Testing request all students
+// Testing request READ all students
 GET http://localhost:4000/api/students
 ###
 
-// Testing request single student
+// Testing request READ single student
 
-GET http://localhost:4000/api/student/644d63117361f3bbfcdb9cbd
+GET http://localhost:4000/api/student/6456b78583b54d360241c4cc
 ###
 
-// Testing request create new student
-
+// Testing request CREATE new student
 POST http://localhost:4000/api/new-student
 content-type: application/json
 
@@ -29,14 +28,13 @@ content-type: application/json
 }
 ###
 
-// Testing request update student
-
-PUT http://localhost:4000/api/update-student/644d822d3897d90c7afc47f0
+// Testing request UPDATE student
+PUT http://localhost:4000/api/update-student/6456d308b61ff27ae3880d34
 content-type: application/json
 
 {
     "firstname": "Andres ",
-    "lastname": "Pendejo",
+    "lastname": "Martínez Rivera",
     "age": "20",
     "phone": "456123789",
     "email": "andres@andres2.com",
@@ -46,9 +44,8 @@ content-type: application/json
 }
 ###
 
-// Testing request update student
-
-DELETE http://localhost:4000/api/delete-student/644d81e33897d90c7afc47ee
+// Testing request DELETE student
+DELETE http://localhost:4000/api/delete-student/6456d2d5b61ff27ae3880d2e
 
 
 
