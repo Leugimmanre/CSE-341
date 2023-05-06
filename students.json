@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "Miguel",
+    "lastName": "Martínez",
+    "age": 45,
+    "phone": "562487952",
+    "email": "miguel@miguel.com",
+    "address": "300 Morrison ST Twin Falls ID 83301-5435 USA",
+    "degree": "Software Development",
+    "university": "BYU IDAHO"
+  },
+  {
+    "firstName": "Jose",
+    "lastName": "Gonzales",
+    "age": 48,
+    "phone": "562487952",
+    "email": "jose@jose.com",
+    "address": "400 Morrison ST Twin Falls ID 83301-5435 USA",
+    "degree": "Applied Business Management",
+    "university": "BYU IDAHO"
+  },
+  {
+    "firstName": "Camila",
+    "lastName": "Hernandez",
+    "age": 21,
+    "phone": "562487952",
+    "email": "isaac@isaac.com",
+    "address": "500 Morrison ST Twin Falls ID 83301-5435 USA",
+    "degree": "Applied Health",
+    "university": "BYU IDAHO"
+  },
+  {
+    "firstName": "Ana",
+    "lastName": "Perez",
+    "age": 32,
+    "phone": "562487952",
+    "email": "ana@ana.com",
+    "address": "600 Morrison ST Twin Falls ID 83301-5435 USA",
+    "degree": "Information Technology",
+    "university": "BYU IDAHO"
+  }
+]

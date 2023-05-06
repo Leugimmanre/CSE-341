@@ -1,0 +1,51 @@
+
+// Testing request all contacts
+GET http://localhost:4000/contacts
+###
+
+// Testing request single contact
+
+GET http://localhost:4000/contact/644d63117361f3bbfcdb9cbd
+###
+
+// Testing request create new contact
+
+POST http://localhost:4000/new-contact
+content-type: application/json
+
+{
+    "firstName": "Andres",
+    "lastName": "Martinez",
+    "age": "20",
+    "phone": "456123789",
+    "email": "andres@andres.com",
+    "address": "C/c n2",
+    "degree": "Machanic",
+    "university": "BYU IDAHO"
+}
+###
+
+// Testing request update contact
+
+PUT http://localhost:4000/update-contact/644d822d3897d90c7afc47f0
+content-type: application/json
+
+{
+    "firstname": "Andres ",
+    "lastname": "Pendejo",
+    "age": "20",
+    "phone": "456123789",
+    "email": "andres@andres2.com",
+    "address": "C/c n2",
+    "degree": "PSYCHOLOGY",
+    "university": "BYU IDAHO"
+}
+###
+
+// Testing request update contact
+
+DELETE http://localhost:4000/delete-contact/644d81e33897d90c7afc47ee
+
+
+
+
