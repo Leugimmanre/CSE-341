@@ -14,7 +14,9 @@ const getStudents = async (response) => {
   try {
     const students = await StudentProfile.find({});
     if (students.length === 0) {
-      return response.status(404).json({message: "There are no registered students."});
+      return response
+        .status(404)
+        .json({message: "There are no registered students."});
     }
     response
       .status(200)
@@ -32,7 +34,7 @@ const GetSingleStudent = async (request, response) => {
   if (!student) {
     return response
       .status(404)
-      .json({msg: 'Student not found'})
+      .json({message: 'Student not found'})
   }
   response
     .send(student)
@@ -66,10 +68,9 @@ const createStudent = async (request, response) => {
   const {email} = request.body;
   const studentExists = await StudentProfile.findOne({email});
   if (studentExists) {
-    const error = new Error('The student has already been registered');
     return response
       .status(400)
-      .json({msg: error.message});
+      .json({message: 'The student has already been registered'});
   }
 
   try {
@@ -81,8 +82,9 @@ const createStudent = async (request, response) => {
       .status(201)
       .json(newStudent);
   } catch (error) {
-    console.log({ error: error.message });
-  }
+    response
+      .status(500)
+      .json({ message: error.message });}
 };
 
 // UPDATE student profile
@@ -94,7 +96,7 @@ const updateStudent = async (request, response) => {
     if (!student) {
       return response
         .status(404)
-        .json({msg: 'Student not found'})
+        .json({message: 'Student not found'})
     }
 
     student.firstName = request.body.firstName || student.firstName;
@@ -116,7 +118,7 @@ const updateStudent = async (request, response) => {
 };
 
 // DELETE student profile
-const deleteStudent = async ({ params: { id }, response }) => {
+const deleteStudent = async ({params: {id} , response}) => {
   try {
     const deletedProfile = await StudentProfile.findByIdAndDelete(id);
     if (!deletedProfile) {
@@ -126,7 +128,7 @@ const deleteStudent = async ({ params: { id }, response }) => {
     }
     response
       .status(200)
-      .json({ message: "Profile deleted successfully" });
+      .json({ message: "Profile deleted successfully"});
   } catch (error) {
     response
       .status(500)
