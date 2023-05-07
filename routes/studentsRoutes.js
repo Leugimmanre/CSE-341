@@ -1,27 +1,28 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require('../swagger.json');
+const swaggerDocument = require("../swagger.json");
 
 const {
-    home,
-    students,
-    singleStudent,
-    createStudent,
-    updateStudent,
-    deleteStudent
-} = require("../controllers/controllers.js");
+  getHome,
+  getStudents,
+  GetSingleStudent,
+  createStudent,
+  updateStudent,
+  deleteStudent,
+} = require("../controllers/studentController.js");
 
-router.use('/doc-swagger', swaggerUi.serve);
+router.use("/doc-swagger", swaggerUi.serve);
 
 // HTTP methods
-router.get("/", home);
-router.get("/students", students);
-router.get("/student/:id", singleStudent);
-router.post("/new-student", createStudent);
-router.put("/update-student/:id", updateStudent);
-router.delete("/delete-student/:id", deleteStudent);
-//API Documentation
-router.get('/doc-swagger', swaggerUi.setup(swaggerDocument));
+router
+    .get("/", getHome)
+    .get("/students", getStudents)
+    .get("/student/:id", GetSingleStudent)
+    .post("/new-student", createStudent)
+    .put("/update-student/:id", updateStudent)
+    .delete("/delete-student/:id", deleteStudent)
+    //API Documentation
+    .get("/doc-swagger", swaggerUi.setup(swaggerDocument));
 
 module.exports = router;

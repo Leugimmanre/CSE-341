@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Lesson 4: API Documentation",
-    "description": "Contacts API",
+    "title": "Lesson 6: Validation & Error Handling",
+    "description": "Web Services API",
     "version": "1.0.0"
   },
-  "host": "lesson-2-personal-assignment.onrender.com",
+  "host": "localhost:4000/api",
   "basePath": "/",
   "schemes": ["http"],
   "paths": {
@@ -16,23 +16,16 @@
         "responses": {}
       }
     },
-    "/": {
+    "/students/": {
       "get": {
-        "description": "",
+        "description": "All students are retrieved",
         "parameters": [],
         "responses": {}
       }
     },
-    "/contacts/": {
+    "/student/{id}": {
       "get": {
-        "description": "All contacts are retrieved",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/contact/{id}": {
-      "get": {
-        "description": "A single contact sending the ID example: 644d63117361f3bbfcdb9cbd",
+        "description": "A single student sending the ID example: 6456b78583b54d360241c4cc",
         "parameters": [
           {
             "name": "id",

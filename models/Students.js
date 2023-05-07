@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const generateId = require('../helpers/generateId.js');
+const { number } = require("joi");
 
-const ProfileSchema = mongoose.Schema({
+const studentSchema = mongoose.Schema({
     firstName: {
         type: String,
         required: true,
@@ -14,7 +16,7 @@ const ProfileSchema = mongoose.Schema({
         trim: true
     },
     age: {
-        type: String,
+        type: number,
         required: true,
         trim: true
     },
@@ -37,13 +39,14 @@ const ProfileSchema = mongoose.Schema({
 
     },
     degree: {
-        type: String
+        type: String,
+        default: null
     },
     university: {
-        type: String
-    },
+        type: String,
+    }
 });
 
-const StudentProfile = mongoose.model('StudentProfile', ProfileSchema);
+const StudentProfile = mongoose.model('StudentProfile', studentSchema);
 
 module.exports = StudentProfile;
