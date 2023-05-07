@@ -47,7 +47,7 @@ const createStudent = async (request, response) => {
   const schema = Joi.object({
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
-    age: Joi.number().integer().min(18).max(99).required(),
+    age: Joi.number().integer().min(1).max(2).required(),
     phone: Joi.string().required(),
     email: Joi.string().email().required(),
     address: Joi.string().required(),
