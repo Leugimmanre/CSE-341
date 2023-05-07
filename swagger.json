@@ -7,7 +7,7 @@
   },
   "host": "localhost:4000/api",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/doc-swagger": {
       "get": {
