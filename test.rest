@@ -28,12 +28,12 @@ content-type: application/json
 ###
 
 // Testing request UPDATE student
-PUT http://localhost:4000/api/update-student/64591c567b2879b317879dbe
+PUT http://localhost:4000/api/update-student/64591e12121a5a1953e659df
 content-type: application/json
 
 {
     "firstName": "Andres",
-    "lastName": "Martínez Rivera",
+    "lastName": "Martinez Rivera",
     "age": 20,
     "phone": "4561237898",
     "email": "andres@andres2.com",
@@ -44,7 +44,7 @@ content-type: application/json
 ###
 
 // Testing request DELETE student
-DELETE http://localhost:4000/api/delete-student/64591c567b2879b317879dbe
+DELETE http://localhost:4000/api/delete-student/64591e12121a5a1953e659df
 
 
 

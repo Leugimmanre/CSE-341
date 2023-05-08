@@ -2,13 +2,11 @@ const Joi = require('joi');
 
 const registerSchema = Joi.object({
   firstName: Joi.string()
-    .alphanum()
     .min(3)
     .max(30)
     .pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)
     .required(),
   lastName: Joi.string()
-    .alphanum()
     .min(3)
     .max(30)
     .pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)
