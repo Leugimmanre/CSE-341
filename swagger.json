@@ -25,7 +25,7 @@
     },
     "/student/{id}": {
       "get": {
-        "description": "A single student sending the ID example: 6456b78583b54d360241c4cc",
+        "description": "A single student sending the ID example: 6458425cf10424fe7c9bbf59",
         "parameters": [
           {
             "name": "id",
