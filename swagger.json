@@ -5,7 +5,7 @@
     "description": "Web Services API",
     "version": "1.0.0"
   },
-  "host": "localhost:4000/api",
+  "host": "cse-341-web-services-ifie.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
