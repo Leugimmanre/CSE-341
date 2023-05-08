@@ -28,7 +28,7 @@ content-type: application/json
 ###
 
 // Testing request UPDATE student
-PUT http://localhost:4000/api/update-student/64591e12121a5a1953e659df
+PUT http://localhost:4000/api/update-student/64591f15446d35b55f93a717
 content-type: application/json
 
 {
@@ -44,7 +44,7 @@ content-type: application/json
 ###
 
 // Testing request DELETE student
-DELETE http://localhost:4000/api/delete-student/64591e12121a5a1953e659df
+DELETE http://localhost:4000/api/delete-student/64591f15446d35b55f93a717
 
 
 

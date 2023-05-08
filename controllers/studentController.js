@@ -42,11 +42,6 @@ const GetSingleStudent = async (request, response) => {
 
 // CREATE student profile
 const createStudent = async (request, response) => {
-  // Capturar datos con JOI
-  const { firstName, lastName, age, phone, address, degree, university } = request.body;
-
-  // response.send(`nombre: ${firstName}, Apellido: ${lastName}, Edad: ${age}, Teléfono: ${phone}, Dirección: ${address}, Grado: ${degree}, Universidad: ${university}`);
-
   // Prevent repeat users
   const {email} = request.body;
   const studentExists = await StudentProfile.findOne({email});
