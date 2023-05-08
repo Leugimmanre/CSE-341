@@ -16,6 +16,7 @@ const studentSchema = mongoose.Schema({
     },
     age: {
         type: Number,
+        type: Number,
         required: true,
         trim: true
     },
