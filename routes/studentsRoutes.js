@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
+
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("../swagger.json");
+
+const validation = require('../middleware/joiValidation.js')
+const registerSchema = require('../models/registerStudents.js');
 
 const {
   getHome,
@@ -19,8 +23,8 @@ router
     .get("/", getHome)
     .get("/students", getStudents)
     .get("/student/:id", GetSingleStudent)
-    .post("/new-student", createStudent)
-    .put("/update-student/:id", updateStudent)
+    .post("/new-student", validation(registerSchema), createStudent)
+    .put("/update-student/:id", validation(registerSchema), updateStudent)
     .delete("/delete-student/:id", deleteStudent)
     //API Documentation
     .get("/doc-swagger", swaggerUi.setup(swaggerDocument));

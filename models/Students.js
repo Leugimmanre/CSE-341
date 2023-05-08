@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const generateId = require('../helpers/generateId.js');
-const { number } = require("joi");
 
 const studentSchema = mongoose.Schema({
     firstName: {
@@ -16,7 +15,7 @@ const studentSchema = mongoose.Schema({
         trim: true
     },
     age: {
-        type: number,
+        type: Number,
         required: true,
         trim: true
     },
@@ -40,10 +39,11 @@ const studentSchema = mongoose.Schema({
     },
     degree: {
         type: String,
-        default: null
+        required: true,
     },
     university: {
         type: String,
+        required: true,
     }
 });
 

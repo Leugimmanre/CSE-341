@@ -1,15 +1,14 @@
 const StudentProfile = require("../models/Students.js");
-const Joi = require('joi');
 
 // Students home
-const getHome = async (response) => {
+const getHome = async (request, response) => {
   response.json({
     message: "Welcome to the main student page",
   });
 };
 
 // GET all students Profiles
-const getStudents = async (response) => {
+const getStudents = async (request, response) => {
 
   try {
     const students = await StudentProfile.find({});
@@ -43,27 +42,11 @@ const GetSingleStudent = async (request, response) => {
 
 // CREATE student profile
 const createStudent = async (request, response) => {
-  // Define the validation schema using Joi
-  const schema = Joi.object({
-    firstName: Joi.string().required(),
-    lastName: Joi.string().required(),
-    age: Joi.number().integer().min(18).max(99).required(),
-    phone: Joi.string().required(),
-    email: Joi.string().email().required(),
-    address: Joi.string().required(),
-    degree: Joi.string().required(),
-    university: Joi.string().required(),
-  });
+  // Capturar datos con JOI
+  const { firstName, lastName, age, phone, address, degree, university } = request.body;
 
-  // Validate request body using Joi
-  const { error } = schema.validate(request.body);
+  // response.send(`nombre: ${firstName}, Apellido: ${lastName}, Edad: ${age}, Teléfono: ${phone}, Dirección: ${address}, Grado: ${degree}, Universidad: ${university}`);
 
-  // If there is an error in the validation, send a 400 Bad Request status code
-  if (error) {
-    return response
-      .status(400)
-      .json({ message: error.details[0].message });
-  }
   // Prevent repeat users
   const {email} = request.body;
   const studentExists = await StudentProfile.findOne({email});
@@ -118,9 +101,9 @@ const updateStudent = async (request, response) => {
 };
 
 // DELETE student profile
-const deleteStudent = async ({params: {id} , response}) => {
+const deleteStudent = async (request , response) => {
   try {
-    const deletedProfile = await StudentProfile.findByIdAndDelete(id);
+    const deletedProfile = await StudentProfile.findByIdAndDelete(request.params.id);
     if (!deletedProfile) {
       return response
         .status(404)
