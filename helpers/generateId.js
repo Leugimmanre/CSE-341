@@ -4,5 +4,3 @@ const generarId = () => {
 generarId()
 console.log(generarId())
 module.exports = generarId;
-
-
