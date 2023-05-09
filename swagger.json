@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Lesson 6: Validation & Error Handling",
+    "title": "Lesson 7: OAuth",
     "description": "Web Services API",
     "version": "1.0.0"
   },
