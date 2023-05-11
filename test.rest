@@ -1,18 +1,18 @@
 
 // Testing request home
-GET http://localhost:4000/api
+GET http://localhost:4000
 ###
 
 // Testing request READ all students
-GET http://localhost:4000/api/students
+GET http://localhost:4000/students
 ###
 
 // Testing request READ single student
-GET http://localhost:4000/api/student/6458425cf10424fe7c9bbf5a
+GET http://localhost:4000/student/6458425cf10424fe7c9bbf5a
 ###
 
 // Testing request CREATE new student
-POST http://localhost:4000/api/new-student
+POST http://localhost:4000/new-student
 content-type: application/json
 
 {
@@ -28,7 +28,7 @@ content-type: application/json
 ###
 
 // Testing request UPDATE student
-PUT http://localhost:4000/api/update-student/645a93fee47234469e6842bb
+PUT http://localhost:4000/update-student/645a93fee47234469e6842bb
 content-type: application/json
 
 {
@@ -44,7 +44,7 @@ content-type: application/json
 ###
 
 // Testing request DELETE student
-DELETE http://localhost:4000/api/delete-student/645a93fee47234469e6842bb
+DELETE http://localhost:4000/delete-student/645a93fee47234469e6842bb
 
 
 

@@ -1,11 +1,10 @@
 const StudentProfile = require("../models/Students.js");
-
 // Students home
-const getHome = async (request, response) => {
-  response.json({
-    message: "Welcome to the main student page",
-  });
-};
+// const getHome = async (request, response) => {
+//   response.json({
+//     message: "Welcome to the main student page",
+//   });
+// };
 
 // GET all students Profiles
 const getStudents = async (request, response) => {
@@ -114,11 +113,25 @@ const deleteStudent = async (request , response) => {
   }
 };
 
+// OAuth lesson 7
+const sessionGitHub = async (request, response) => {
+  response
+    .send(request.session.user !== undefined ? `Logged in as ${request.session.user.displayName}` : "Logged Out")
+}
+
+const passportGitHub = (request, response) => {
+    request.session.user = request.user;
+    response
+      .redirect('/');
+}
+
+
 module.exports = {
-  getHome,
   getStudents,
   GetSingleStudent,
   createStudent,
   updateStudent,
   deleteStudent,
+  sessionGitHub,
+  passportGitHub
 };
